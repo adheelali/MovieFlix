@@ -1,0 +1,135 @@
+nav {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  z-index: 2;
+  position: relative;
+}
+
+.nav--logo {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav--logo figure {
+  width: 50px;
+  height: 50px;
+  border-radius: 9999px;
+  overflow: hidden;
+  color: white;
+}
+
+.nav--logo h2 {
+  transition: all 300ms ease;
+}
+
+.nav--logo:hover h2 {
+  color: #dc3535;
+}
+
+.nav__middle {
+  color: whitesmoke;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.7rem;
+}
+
+.nav__middle li {
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.nav__middle li:hover {
+  color: #dc3535;
+}
+
+nav .MuiSvgIcon-root {
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+nav .MuiSvgIcon-root:hover {
+  opacity: 0.8;
+}
+
+.nav__menu {
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  background-color: #191919;
+  padding: 1.5rem;
+  top: 0;
+  right: 0;
+  transform: translateX(300px);
+  transition: all 600ms ease;
+}
+
+.nav__menu--show {
+  transform: translateX(0);
+}
+
+.nav__menu--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__menu--header .MuiSvgIcon-root {
+  color: white;
+  font-size: 2rem;
+}
+
+.nav__menu--header .MuiSvgIcon-root:hover {
+  opacity: 0.8;
+}
+
+.nav__menu--main {
+  padding: 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.nav__menu--main li {
+  height: 3rem;
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+  color: white;
+  font-weight: bold;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.nav__menu--main li:hover {
+  color: #dc3535;
+}
+
+
+@media (max-width:800px) {
+  .nav button {
+    display: none;
+  } 
+  
+  .nav__middle {
+    display: none;
+  }
+
+  nav .MuiSvgIcon-root {
+    display: block;
+  }
+}
