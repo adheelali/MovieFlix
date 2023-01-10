@@ -9,10 +9,12 @@ function Nav() {
 
   const navToggleOpen = () => {
     document.querySelector('.nav__menu').classList += ' nav__menu--show'
+    document.body.classList += ' body__scroll--off'
   }
 
   function navToggleClose() {
     document.querySelector('.nav__menu').classList.remove('nav__menu--show')
+    document.body.classList.remove('body__scroll--off')
   }
 
   return (
@@ -49,7 +51,7 @@ function Nav() {
         </div>
         <ul className="nav__menu--main">
           <li onClick={() => navigate('/')}>HOME</li>
-          <li>BROWSE MOVIES</li>
+          <li onClick={() => navigate('/browse')}>BROWSE MOVIES</li>
           <li>FAVORITES</li>
         </ul>
       </div>

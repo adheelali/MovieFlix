@@ -16,11 +16,15 @@ function Home() {
         Find your favorite <span>movies and shows</span>
       </h3>
       <div className="input">
-        <input value={searchText} onChange={(event) => setSearchText(event.target.value)} placeholder="Search movies" type="text" />
+        <input
+          value={searchText}
+          onKeyDown={(event) =>(event.key === "Enter" && searchText !== '' && searchText.trim()) && navigate("/browse")}
+          onChange={(event) => setSearchText(event.target.value)}
+          placeholder="Search movies"
+          type="text"
+        />
         <button disabled={!searchText.trim()}>
-          <SearchIcon
-            onClick={() => navigate('/browse')}
-          />
+          <SearchIcon onClick={() => navigate("/browse")} />
         </button>
       </div>
     </div>

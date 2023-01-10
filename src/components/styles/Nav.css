@@ -37,7 +37,7 @@ nav {
 }
 
 .nav__middle {
-  color: whitesmoke;
+  color: white;
   font-weight: bolder;
   font-size: 1.5rem;
   display: flex;
@@ -76,10 +76,15 @@ nav .MuiSvgIcon-root:hover {
   right: 0;
   transform: translateX(300px);
   transition: all 600ms ease;
+  z-index: 5;
 }
 
 .nav__menu--show {
   transform: translateX(0);
+}
+
+.body__scroll--off {
+  overflow: hidden;
 }
 
 .nav__menu--header {
