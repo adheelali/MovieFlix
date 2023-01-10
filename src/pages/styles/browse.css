@@ -70,30 +70,3 @@
   font-weight: 600;
   letter-spacing: 1px;
 }
-
-main {
-  flex: 1 1;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 24px;
-  width: 100%;
-}
-
-@media (max-width: 1220px) {
-  main {
-    max-width: 940px !important;
-  }
-}
-
-.movie__list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.movie__wrapper {
-  height: 500px;
-  max-width: 300px;
-  width: 25%;
-  background-color: black;
-}

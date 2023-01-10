@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { movieTextState } from "../../atoms/Atom";
+import Movies from "./UI/Movies";
 
 function Browse() {
   // API request for once
@@ -28,15 +29,14 @@ function Browse() {
   async function searchMovies() {
     if (searchText !== "" && executed && searchText.trim()) {
       const { data } = await axios.get(
-        `https://www.omdbapi.com/?&apikey=c968a92&s=${searchText}&page=4`
+        `https://www.omdbapi.com/?&apikey=c968a92&s=${searchText}`
       );
       console.log(data);
       setSearchData(data);
       setExecuted(false);
     } else if (searchText !== "" && mountCount === 0 && searchText.trim()) {
       const { data } = await axios.get(
-        // `https://www.omdbapi.com/?i=tt3896198&apikey=c968a92&s=${searchText}`
-        `https://www.omdbapi.com/?&apikey=c968a92&s=${searchText}&page=10`
+        `https://www.omdbapi.com/?&apikey=c968a92&s=${searchText}`
       );
       console.log(data);
       setSearchData(data);
@@ -94,17 +94,7 @@ function Browse() {
             </span>
           )}
         </div>
-        <main>
-          <div className="movie__list">
-            {searchData?.Search.map((data) => (
-              <div className="movie__wrapper">
-                <figure className="movie__img--wrapper">
-                  <img src={data.Poster} alt="" />
-                </figure>
-              </div>
-            ))}
-          </div>
-        </main>
+        <Movies data={searchData}/>
       </div>
     </>
   );
