@@ -2,7 +2,8 @@
   background-image: url('https://c4.wallpaperflare.com/wallpaper/44/754/545/battlefield-1-soldier-gas-masks-mauser-1918-wallpaper-preview.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 img {

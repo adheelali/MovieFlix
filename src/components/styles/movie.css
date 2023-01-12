@@ -1,0 +1,130 @@
+.movie__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie__wrapper {
+  position: relative;
+  height: 500px;
+  max-width: 300px;
+  width: 25%;
+  background-color: transparent;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 300ms ease;
+}
+
+.movie__wrapper .MuiSvgIcon-root {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  transition: all 200ms ease;
+}
+
+.movie__wrapper:hover .MuiSvgIcon-root {
+  visibility: visible;
+}
+
+.movie__wrapper:hover {
+  scale: 1.05;
+}
+
+.movie__wrapper:hover .movie__img--wrapper {
+  opacity: 0.4;
+}
+
+.movie__wrapper:hover .movie__description {
+  opacity: 0.4;
+}
+
+.movie__img--wrapper {
+  height: 350px;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  overflow: hidden;
+  transition: all 300ms ease;
+}
+
+.movie__img--skeleton {
+  width: 100%;
+  height: 350px;
+  background-color: grey;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.movie__description {
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1rem;
+  transition: all 300ms ease;
+}
+
+.movie__info {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.movie__title {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: grey;
+  height: calc(130px / 3);
+}
+
+.movie__year {
+  padding: 2px;
+  background-color: #dc3535;
+  color: white;
+  width: fit-content;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.movie__type {
+  color: white;
+  background-color: lightgreen;
+  font-size: 20px;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+  .movie__wrapper {
+    width: 33%;
+  }
+}
+
+@media (max-width: 1015px) {
+  .movie__wrapper {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie__wrapper {
+    width: 100%;
+  }
+}

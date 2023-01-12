@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  color: white;
+  margin: 0 auto;
+}
+
+.selectedMovie {
+  display: flex;
+  flex: 1 1;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.arrow-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  gap: 0.4rem;
+}
+
+.selectedMovie > figure {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px white;
+}
+
+.arrow-back:hover {
+  cursor: pointer;
+}
+
+.arrow-back .MuiSvgIcon-root {
+  font-size: 2rem;
+}
+
+.selectedMovie__title {
+  font-size: 36px;
+  margin-bottom: 1rem;
+} 
+
+.selectedMovie__facts {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 16px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.selectedMovie__rated {
+  padding: 4px 8px;
+  border: 2px solid white;
+  border-radius: 5px;
+}

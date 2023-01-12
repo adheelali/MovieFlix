@@ -74,7 +74,7 @@ nav .MuiSvgIcon-root:hover {
   padding: 1.5rem;
   top: 0;
   right: 0;
-  transform: translateX(300px);
+  transform: translateX(320px);
   transition: all 600ms ease;
   z-index: 5;
 }

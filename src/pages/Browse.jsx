@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { movieTextState } from "../../atoms/Atom";
-import Movies from "../components/Movies";
+import Movies from "../components/Movie";
 
 function Browse() {
   // API request for once
@@ -94,7 +94,7 @@ function Browse() {
             </span>
           )}
         </div>
-        <Movies data={searchData}/>
+        <Movies data={searchData} />
       </div>
     </>
   );

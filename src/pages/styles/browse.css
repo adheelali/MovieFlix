@@ -63,10 +63,17 @@
 }
 
 .browse__main {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
   margin-top: calc(350px - 100px);
   padding: 2rem 3rem;
   color: white;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.browse__main--header {
+  margin-bottom: 2rem;
 }
