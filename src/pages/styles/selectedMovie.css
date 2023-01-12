@@ -4,14 +4,13 @@
   align-items: flex-start;
   width: 100%;
   max-width: 1200px;
-  padding: 2rem;
+  padding: 2rem 3rem;
   color: white;
   margin: 0 auto;
 }
 
 .selectedMovie {
   display: flex;
-  flex: 1 1;
   padding: 2rem;
   gap: 3rem;
 }
@@ -29,6 +28,11 @@
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 10px 3px white;
+  min-width: 300px;
+  width: 30%;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
 }
 
 .arrow-back:hover {
@@ -39,21 +43,100 @@
   font-size: 2rem;
 }
 
+.selectedMovie__info {
+  display: flex;
+  flex-direction: column;
+}
+
 .selectedMovie__title {
   font-size: 36px;
-  margin-bottom: 1rem;
-} 
+  color: #dc3535;
+}
 
 .selectedMovie__facts {
   display: flex;
+  margin: 1rem 0;
   gap: 0.4rem;
   font-size: 16px;
   align-items: center;
   justify-content: flex-start;
 }
 
+.movie__facts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .selectedMovie__rated {
   padding: 4px 8px;
   border: 2px solid white;
   border-radius: 5px;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+.selectedMovie__ratings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.selectedMovie__ratings span {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.selectedMovie__metascore {
+  padding: 1rem 0.8rem;
+  border-radius: 50%;
+  background-color: black;
+  font-size: 1.4rem;
+}
+
+.selectedMovie__imdbRating  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 2px solid white;
+}
+
+.selectedMovie__imdbRating > span {
+  opacity: 0.7;
+  font-weight: 100;
+}
+
+.selectedMovie__overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.selectedMovie__overview h3 {
+  font-size: 24px;
+  color: #dc3535;
+}
+
+.selectedMovie__overview p {
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+
+@media (max-width:900px) {
+ .selectedMovie {
+  flex-direction: column;
+ } 
+
+ .selectedMovie > figure {
+  min-width: 200px;
+ }
 }

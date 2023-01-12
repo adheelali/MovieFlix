@@ -9,6 +9,12 @@ function Home() {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useRecoilState(movieTextState);
 
+  function navigateBrowse() {
+    setTimeout(() => {
+      navigate("/browse");
+    }, 500);
+  }
+
   return (
     <div className="home">
       <h1>Maldives most awarded free movie platform</h1>
@@ -18,13 +24,21 @@ function Home() {
       <div className="input">
         <input
           value={searchText}
-          onKeyDown={(event) =>(event.key === "Enter" && searchText !== '' && searchText.trim()) && navigate("/browse")}
+          onKeyDown={(event) =>
+            event.key === "Enter" &&
+            searchText !== "" &&
+            searchText.trim() &&
+            navigate("/browse")
+          }
           onChange={(event) => setSearchText(event.target.value)}
           placeholder="Search movies"
           type="text"
         />
-        <button disabled={!searchText.trim()}>
-          <SearchIcon onClick={() => navigate("/browse")} />
+        <button
+          disabled={!searchText.trim()}
+          onClick={() => navigate("/browse")}
+        >
+          <SearchIcon />
         </button>
       </div>
     </div>
