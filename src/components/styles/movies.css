@@ -132,3 +132,9 @@
     width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+  .movie__list {
+    margin-left: -.5rem;
+  }
+}

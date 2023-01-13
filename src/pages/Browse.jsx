@@ -31,14 +31,12 @@ function Browse() {
       const { data } = await axios.get(
         `https://www.omdbapi.com/?&apikey=c968a92&s=${searchText}`
       );
-      console.log(data);
       setSearchData(data);
       setExecuted(false);
     } else if (searchText !== "" && mountCount === 0 && searchText.trim()) {
       const { data } = await axios.get(
         `https://www.omdbapi.com/?&apikey=c968a92&s=${searchText}`
       );
-      console.log(data);
       setSearchData(data);
       setExecuted(false);
     }

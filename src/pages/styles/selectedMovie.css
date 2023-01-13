@@ -180,6 +180,7 @@
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
+  border: none;
 }
 
 .remove__button {
@@ -189,6 +190,14 @@
 
 .Recommended__movie {
   padding: 2rem;
+}
+
+.recommended__movie--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .Recommended__movie h2 {
@@ -235,5 +244,9 @@
   .selectedMovie__imdbRating {
     margin: 0;
     width: 100%;
+  }
+  
+  .Recommended__movie {
+    padding: 0;
   }
 }

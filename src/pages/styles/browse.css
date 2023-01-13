@@ -77,3 +77,22 @@
 .browse__main--header {
   margin-bottom: 2rem;
 }
+
+@media (max-width:600px) {
+  .browse {
+    padding: 0 1rem;
+  }
+
+  .browse__main {
+    padding: 1rem;
+  }
+
+  .browse h3 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .browse__main--header {
+    margin-top: .5rem;
+  }
+}

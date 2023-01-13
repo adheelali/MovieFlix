@@ -8,13 +8,13 @@ function Nav() {
   const navigate = useNavigate();
 
   const navToggleOpen = () => {
-    document.querySelector('.nav__menu').classList += ' nav__menu--show'
-    document.body.classList += ' body__scroll--off'
-  }
+    document.querySelector(".nav__menu").classList += " nav__menu--show";
+    document.body.classList += " body__scroll--off";
+  };
 
   function navToggleClose() {
-    document.querySelector('.nav__menu').classList.remove('nav__menu--show')
-    document.body.classList.remove('body__scroll--off')
+    document.querySelector(".nav__menu").classList.remove("nav__menu--show");
+    document.body.classList.remove("body__scroll--off");
   }
 
   return (
@@ -31,10 +31,10 @@ function Nav() {
         </div>
         <ul className="nav__middle">
           <li onClick={() => navigate("/")}>HOME</li>
-          <li onClick={() => navigate('/browse')}>BROWSE MOVIE</li>
+          <li onClick={() => navigate("/browse")}>BROWSE MOVIE</li>
           <li>FAVORITES</li>
         </ul>
-        <MenuIcon onClick={navToggleOpen}/>
+        <MenuIcon onClick={navToggleOpen} />
       </nav>
       <div className="nav__menu">
         <div className="nav__menu--header">
@@ -47,11 +47,25 @@ function Nav() {
             </figure>
             <h2>MovieFlix</h2>
           </div>
-          <CloseIcon onClick={navToggleClose}/>
+          <CloseIcon onClick={navToggleClose} />
         </div>
         <ul className="nav__menu--main">
-          <li onClick={() => navigate('/')}>HOME</li>
-          <li onClick={() => navigate('/browse')}>BROWSE MOVIES</li>
+          <li
+            onClick={() => {
+              navigate("/");
+              navToggleClose();
+            }}
+          >
+            HOME
+          </li>
+          <li
+            onClick={() => {
+              navigate("/browse");
+              navToggleClose();
+            }}
+          >
+            BROWSE MOVIES
+          </li>
           <li>FAVORITES</li>
         </ul>
       </div>

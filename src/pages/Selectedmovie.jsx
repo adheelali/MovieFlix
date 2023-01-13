@@ -27,7 +27,6 @@ function SelectedMovie() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?&apikey=c968a92&s=${searchText}`
     );
-    console.log(data);
     setMoviesData(data);
   }
 
@@ -105,9 +104,13 @@ function SelectedMovie() {
       </div>
       <div className="Recommended__movie">
         <h2>Recommended Movies</h2>
-        {moviesData?.Search?.slice(0, 4).map((data) => (
-          <Movies key={data.imdbID} data={data} />
-        ))}
+        <div className="recommended__movie--wrapper">
+          {moviesData?.Search?.filter((data) => data.imdbID !== id)
+            .slice(0, 4)
+            .map((data) => (
+              <Movies key={data.imdbID} data={data} recommended />
+            ))}
+        </div>
       </div>
     </div>
   );
