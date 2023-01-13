@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { movieTextState } from "../../atoms/Atom";
-import Movies from "../components/Movie";
+import Movies from "../components/Movies";
 
 function Browse() {
   // API request for once
