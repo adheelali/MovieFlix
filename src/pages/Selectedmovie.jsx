@@ -46,7 +46,7 @@ function SelectedMovie() {
   function removeLocal() {
     let data = JSON.parse(localStorage.getItem("favorites"));
     //seeing if the values matches the id and filtering
-    data.filter((data) => data !== JSON.stringify(id));
+    data.filter((data) => data !== id);
     localStorage.setItem("favorites", JSON.stringify(data));
   }
 
