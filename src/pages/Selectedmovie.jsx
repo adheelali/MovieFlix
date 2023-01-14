@@ -11,7 +11,7 @@ import Movies from "../components/Movies";
 function SelectedMovie() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [buttonClick, setButtonClick] = useState(false);
+  const [buttonClick, setButtonClick] = useState(true);
   const [movie, setMovie] = useState([]);
   const [searchText, setSearchText] = useRecoilState(movieTextState);
   const [moviesData, setMoviesData] = useState([]);
@@ -31,6 +31,7 @@ function SelectedMovie() {
   }
 
   function addLocal() {
+    //setting the localstorage for new users
     let data = [];
     if (localStorage.getItem("favorites") === null) {
       data[0] = id;
@@ -38,24 +39,14 @@ function SelectedMovie() {
     }
 
     let updatedData = JSON.parse(localStorage.getItem("favorites"));
-    updatedData.map((data) => {
-      if (data !== id) {
-        updatedData.push(id);
-      }
-    });
+    updatedData.push(id);
     localStorage.setItem("favorites", JSON.stringify(updatedData));
   }
 
-
   function removeLocal() {
     let data = JSON.parse(localStorage.getItem("favorites"));
-
-    data.map((data) => {
-      if (data === id) {
-        console.log(data)
-        data.filter((data) => data === id);
-      }
-    });
+    //seeing if the values matches the id and filtering
+    data.filter((data) => data !== JSON.stringify(id));
     localStorage.setItem("favorites", JSON.stringify(data));
   }
 
