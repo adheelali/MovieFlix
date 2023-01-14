@@ -32,7 +32,7 @@ function Nav() {
         <ul className="nav__middle">
           <li onClick={() => navigate("/")}>HOME</li>
           <li onClick={() => navigate("/browse")}>BROWSE MOVIE</li>
-          <li>FAVORITES</li>
+          <li onClick={() => navigate("/favorites")}>FAVORITES</li>
         </ul>
         <MenuIcon onClick={navToggleOpen} />
       </nav>
@@ -66,7 +66,14 @@ function Nav() {
           >
             BROWSE MOVIES
           </li>
-          <li>FAVORITES</li>
+          <li
+            onClick={() => {
+              navigate("/favorites");
+              navToggleClose();
+            }}
+          >
+            FAVORITES
+          </li>
         </ul>
       </div>
     </>

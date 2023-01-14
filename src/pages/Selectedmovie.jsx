@@ -30,6 +30,35 @@ function SelectedMovie() {
     setMoviesData(data);
   }
 
+  function addLocal() {
+    let data = [];
+    if (localStorage.getItem("favorites") === null) {
+      data[0] = id;
+      localStorage.setItem("favorites", JSON.stringify(data));
+    }
+
+    let updatedData = JSON.parse(localStorage.getItem("favorites"));
+    updatedData.map((data) => {
+      if (data !== id) {
+        updatedData.push(id);
+      }
+    });
+    localStorage.setItem("favorites", JSON.stringify(updatedData));
+  }
+
+
+  function removeLocal() {
+    let data = JSON.parse(localStorage.getItem("favorites"));
+
+    data.map((data) => {
+      if (data === id) {
+        console.log(data)
+        data.filter((data) => data === id);
+      }
+    });
+    localStorage.setItem("favorites", JSON.stringify(data));
+  }
+
   useEffect(() => {
     getMovieById();
     getRecommendedMovies();
@@ -88,14 +117,20 @@ function SelectedMovie() {
           {buttonClick ? (
             <button
               className="favorite__button"
-              onClick={() => setButtonClick(!buttonClick)}
+              onClick={() => {
+                setButtonClick(!buttonClick);
+                addLocal();
+              }}
             >
               <GradeIcon /> Add to favorites
             </button>
           ) : (
             <button
               className="favorite__button remove__button"
-              onClick={() => setButtonClick(!buttonClick)}
+              onClick={() => {
+                setButtonClick(!buttonClick);
+                removeLocal();
+              }}
             >
               <GradeIcon /> Remove from favorites
             </button>

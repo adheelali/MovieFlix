@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/home.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { movieTextState } from "../../atoms/Atom";
+import RotateLeftIcon from "@mui/icons-material/RotateLeft";
 
 function Home() {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useRecoilState(movieTextState);
+  const [spinner, setSpinner] = useState(false);
 
   function navigateBrowse() {
+    setSpinner(true);
     setTimeout(() => {
       navigate("/browse");
-    }, 500);
+      setSpinner(false);
+    }, 600);
   }
 
   return (
@@ -28,17 +32,14 @@ function Home() {
             event.key === "Enter" &&
             searchText !== "" &&
             searchText.trim() &&
-            navigate("/browse")
+            navigateBrowse()
           }
           onChange={(event) => setSearchText(event.target.value)}
           placeholder="Search movies"
           type="text"
         />
-        <button
-          disabled={!searchText.trim()}
-          onClick={() => navigate("/browse")}
-        >
-          <SearchIcon />
+        <button disabled={!searchText.trim()} onClick={() => navigateBrowse()}>
+          {spinner ? <RotateLeftIcon className="rotate" /> : <SearchIcon />}
         </button>
       </div>
     </div>
