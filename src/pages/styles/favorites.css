@@ -1,8 +1,10 @@
 .favorites {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1200px;
   padding: 2rem 4rem;
+  gap: 3rem;
 }
 
 .favorites__title {

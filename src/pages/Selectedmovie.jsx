@@ -31,13 +31,14 @@ function SelectedMovie() {
   }
 
   function addLocal() {
-    //setting the localstorage for new users
     let data = [];
     if (localStorage.getItem("favorites") === null) {
       data[0] = id;
       localStorage.setItem("favorites", JSON.stringify(data));
     }
-
+    if (data.length > 0) {
+      return;
+    }
     let updatedData = JSON.parse(localStorage.getItem("favorites"));
     updatedData.push(id);
     localStorage.setItem("favorites", JSON.stringify(updatedData));
@@ -45,12 +46,25 @@ function SelectedMovie() {
 
   function removeLocal() {
     let data = JSON.parse(localStorage.getItem("favorites"));
-    //seeing if the values matches the id and filtering
-    data.filter((data) => data !== id);
-    localStorage.setItem("favorites", JSON.stringify(data));
+    const filteredData = data.filter((currId) => currId !== id);
+    localStorage.setItem("favorites", JSON.stringify(filteredData));
+  }
+
+  function buttonSwitch() {
+    const data = JSON.parse(localStorage.getItem("favorites"));
+
+    if (data?.length === 0 || data === null) {
+      setButtonClick(true);
+      return;
+    }
+
+    if (data?.includes(id)) {
+      setButtonClick(false);
+    } else setButtonClick(true);
   }
 
   useEffect(() => {
+    buttonSwitch();
     getMovieById();
     getRecommendedMovies();
   }, [id]);
@@ -109,8 +123,8 @@ function SelectedMovie() {
             <button
               className="favorite__button"
               onClick={() => {
-                setButtonClick(!buttonClick);
                 addLocal();
+                buttonSwitch();
               }}
             >
               <GradeIcon /> Add to favorites
@@ -119,8 +133,8 @@ function SelectedMovie() {
             <button
               className="favorite__button remove__button"
               onClick={() => {
-                setButtonClick(!buttonClick);
                 removeLocal();
+                buttonSwitch();
               }}
             >
               <GradeIcon /> Remove from favorites
