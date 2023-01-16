@@ -9,7 +9,7 @@ function Favories() {
   function getMoviesById() {
     let movieArr = [];
     const movieIds = JSON.parse(localStorage.getItem("favorites"));
-    
+
     movieIds?.forEach(async (elemId) => {
       const { data } = await axios.get(
         `https://www.omdbapi.com/?&apikey=c968a92&i=${elemId}`
@@ -22,13 +22,13 @@ function Favories() {
   useEffect(() => {
     getMoviesById();
   }, []);
+  console.log(movie);
 
   return (
     <div className="favorites">
       <h2 className="favorites__title">Favorites</h2>
       <div className="favorites__main">
         {movie?.map((data) => {
-          console.log(data);
           return <Movies key={data.imdbID} data={data} recommended />;
         })}
       </div>
