@@ -22,15 +22,14 @@ function Favories() {
   useEffect(() => {
     getMoviesById();
   }, []);
-  console.log(movie);
 
   return (
     <div className="favorites">
       <h2 className="favorites__title">Favorites</h2>
       <div className="favorites__main">
-        {movie?.map((data) => {
-          return <Movies key={data.imdbID} data={data} recommended />;
-        })}
+        {movie?.map((data) => (
+           <Movies key={data.imdbID} data={data} recommended />
+        ))}
       </div>
     </div>
   );

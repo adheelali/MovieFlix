@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Movies({ data, recommended }) {
   const navigate = useNavigate();
+  console.log(data)
   return (
     <>
       {recommended ? (

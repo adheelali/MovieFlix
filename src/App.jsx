@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Browse from "./pages/Browse";
 import SelectedMovie from "./pages/Selectedmovie";
-import Favories from "./pages/Favories";
+import Favories from "./pages/Favorites";
 
 function App() {
   return (
