@@ -16,6 +16,7 @@ function Browse() {
   const [searchText, setSearchText] = useRecoilState(movieTextState);
   const [searchData, setSearchData] = useState([]);
 
+  const [filtervalue, setFilterValue] = useState('')
   // const options = {
   //   method: "GET",
   //   url: "https://imdb8.p.rapidapi.com/auto-complete",
@@ -47,6 +48,10 @@ function Browse() {
     //   console.log(data);
     //   setExecuted(false);
     // }
+  }
+
+  function filterMovies() {
+
   }
 
   useEffect(() => {
@@ -85,12 +90,17 @@ function Browse() {
       </div>
       <div className="browse__main">
         <div className="browse__main--header">
-          Search results{" "}
-          {inputedText && (
-            <span>
-              for <span className="color">{`"${inputedText}"`}</span>
-            </span>
-          )}
+          <div>
+            Search results{" "}
+            {inputedText && (
+              <span>
+                for <span className="color">{`"${inputedText}"`}</span>
+              </span>
+            )}
+          </div>
+          {/* <div className="browse__filter">
+            <input type="range" value={filtervalue} min='1' max='100' id="" onChange={(event) => setFilterValue(event.target.value)}/>
+          </div> */}
         </div>
         <Movies data={searchData} />
       </div>
